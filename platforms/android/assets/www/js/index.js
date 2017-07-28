@@ -84,7 +84,7 @@
  }
 
  function onDeviceReady() {
-     document.removeEventListener('deviceready', onDeviceReady, false);
+     //     document.removeEventListener('deviceready', onDeviceReady, false);
      initAds();
 
      // display a banner at startup
@@ -101,6 +101,12 @@
  }
 
  document.addEventListener("deviceready", onDeviceReady, false);
+ document.addEventListener("backbutton", function () {
+     if ($('#myModal').is(':visible')) {
+         $('#myModal').modal('toggle');
+     } else
+         navigator.app.exitApp();
+ }, false);
 
  $('#number').keyup(function () {
 
