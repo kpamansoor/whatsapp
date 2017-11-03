@@ -12,37 +12,38 @@
  });
 
  var isAppForeground = true;
+ var admobid = {};
 
  function initAds() {
-     if (admob) {
-         var adPublisherIds = {
-             ios: {
-                 banner: "ca-app-pub-XXXXXXXXXXXXXXXX/BBBBBBBBBB",
-                 interstitial: "ca-app-pub-XXXXXXXXXXXXXXXX/IIIIIIIIII"
-             },
-             android: {
-                 banner: "ca-app-pub-1243068719441957/4844840227",
-                 interstitial: "ca-app-pub-XXXXXXXXXXXXXXXX/IIIIIIIIII"
-             }
+
+
+     if (/(android)/i.test(navigator.userAgent)) { // for android & amazon-fireos
+         admobid = {
+             banner: 'ca-app-pub-1243068719441957/8725675322', // or DFP format "/6253334/dfp_example_ad"
+             interstitial: 'ca-app-pub-1243068719441957/1225447490'
          };
-
-         var admobid = (/(android)/i.test(navigator.userAgent)) ? adPublisherIds.android : adPublisherIds.ios;
-
-         admob.setOptions({
-             publisherId: admobid.banner,
-             interstitialAdId: admobid.interstitial,
-             tappxIdiOS: "/XXXXXXXXX/Pub-XXXX-iOS-IIII",
-             tappxIdAndroid: "ca-app-pub-1243068719441957~1891373820",
-             tappxShare: 0.5,
-             isTesting: true,
-
-         });
-
-         registerAdEvents();
-
-     } else {
-         alert('AdMobAds plugin not ready');
+     } else if (/(ipod|iphone|ipad)/i.test(navigator.userAgent)) { // for ios
+         admobid = {
+             banner: 'ca-app-pub-xxx/zzz', // or DFP format "/6253334/dfp_example_ad"
+             interstitial: 'ca-app-pub-xxx/kkk'
+         };
+     } else { // for windows phone
+         admobid = {
+             banner: 'ca-app-pub-xxx/zzz', // or DFP format "/6253334/dfp_example_ad"
+             interstitial: 'ca-app-pub-xxx/kkk'
+         };
      }
+
+     if (AdMob) AdMob.prepareInterstitial({
+         adId: admobid.interstitial,
+         autoShow: false,
+         isTesting: true
+     });
+     if(AdMob) AdMob.createBanner({
+        adId: admobid.banner,
+        position: AdMob.AD_POSITION.BOTTOM_CENTER,
+        autoShow: true });
+     
  }
 
  function onAdLoaded(e) {
@@ -70,31 +71,20 @@
      }
  }
 
- // optional, in case respond to events
- function registerAdEvents() {
-     document.addEventListener(admob.events.onAdLoaded, onAdLoaded);
-     document.addEventListener(admob.events.onAdFailedToLoad, function (e) {});
-     document.addEventListener(admob.events.onAdOpened, function (e) {});
-     document.addEventListener(admob.events.onAdClosed, function (e) {});
-     document.addEventListener(admob.events.onAdLeftApplication, function (e) {});
-     document.addEventListener(admob.events.onInAppPurchaseRequested, function (e) {});
-
-     document.addEventListener("pause", onPause, false);
-     document.addEventListener("resume", onResume, false);
- }
 
  function onDeviceReady() {
-     //     document.removeEventListener('deviceready', onDeviceReady, false);
+    // cordova.plugins.clipboard.copy("hell");
+    //cordova.plugins.clipboard.paste(function (text) { alert(text); });
      initAds();
-
-     // display a banner at startup
-     //     admob.createBannerView();
-
-     // request an interstitial
-     //admob.requestInterstitialAd();
      setTimeout(function () {
-         //         admob.requestInterstitialAd();
-     }, 10000);
+        navigator.splashscreen.hide();
+
+     }, 1000);
+     setTimeout(function () {
+        // show the interstitial later, e.g. at end of game level
+        if (AdMob) AdMob.showInterstitial();
+
+    }, 10000);
 
      $('#send').addClass('disable_click');
      $('#send').attr('disabled', true);
@@ -109,9 +99,9 @@
      }
  }, false);
 
- $('#number').keyup(function () {
+ $('#number').on('input',function () {
 
-     if (/^\d{12,14}$/.test($("#number").val())) {
+     if (/^([+])?\d{11,13}$/.test($("#number").val())) {
 
          $('#number').removeClass('red_text');
          $('#number').addClass('green_text');

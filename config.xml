@@ -23,10 +23,12 @@
             <allow-intent href="itms:*" />
             <allow-intent href="itms-apps:*" />
         </platform>
-        <preference name="SplashScreenDelay" value="3000" />
+        <!-- <preference name="SplashScreenDelay" value="2000" /> -->
+        <preference name="AutoHideSplashScreen" value="false" />
         <preference name="ShowSplashScreenSpinner" value="false" />
         <preference name="StatusBarOverlaysWebView" value="true" />
         <preference name="StatusBarBackgroundColor" value="#133233" />
         <preference name="StatusBarStyle" value="lightcontent" />
         <preference name="DisallowOverscroll" value="true" />
+        <preference name="orientation" value="portrait" />
     </widget>

@@ -13,15 +13,15 @@
         "cordova-plugin-splashscreen": {
             "PACKAGE_NAME": "com.mansoor.whatsapp"
         },
-        "cordova-admob": {
+        "cordova-plugin-statusbar": {
             "PACKAGE_NAME": "com.mansoor.whatsapp"
         },
-        "cordova-plugin-statusbar": {
+        "cordova-plugin-admobpro": {
             "PACKAGE_NAME": "com.mansoor.whatsapp"
         }
     },
     "dependent_plugins": {
-        "cordova-connectivity-monitor": {
+        "cordova-plugin-extension": {
             "PACKAGE_NAME": "com.mansoor.whatsapp"
         }
     }

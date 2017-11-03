@@ -123,3 +123,9 @@ h1 {
 .disable_click {
     pointer-events: none;
 }
+.loading {    
+    background-color: #ffffff;
+    background-image: url("../img/ajax-loader.gif");
+    background-position:right center;
+    background-repeat: no-repeat;
+}
