@@ -46,5 +46,13 @@
         },
         "is_top_level": false,
         "variables": {}
+    },
+    "cordova-plugin-clipboard2": {
+        "source": {
+            "type": "registry",
+            "id": "cordova-plugin-clipboard2"
+        },
+        "is_top_level": true,
+        "variables": {}
     }
 }

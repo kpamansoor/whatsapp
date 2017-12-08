@@ -18,6 +18,9 @@
         },
         "cordova-plugin-admobpro": {
             "PACKAGE_NAME": "com.mansoor.whatsapp"
+        },
+        "cordova-plugin-clipboard2": {
+            "PACKAGE_NAME": "com.mansoor.whatsapp"
         }
     },
     "dependent_plugins": {

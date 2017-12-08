@@ -78,14 +78,22 @@
      initAds();
      setTimeout(function () {
         navigator.splashscreen.hide();
-
+        cordova.plugins.clipboard.paste(function (text) {
+            if(/^([+])?\d{11,13}$/.test(text)){
+                if(confirm("A mobile number "+text+" found in clipboard. Do you want to copy? ")){
+                    $('#number').val(text);
+                    $("#number").trigger("input");
+                    updateLink();
+                }
+            }
+         });
      }, 1000);
      setTimeout(function () {
         // show the interstitial later, e.g. at end of game level
         if (AdMob) AdMob.showInterstitial();
 
     }, 10000);
-
+   
      $('#send').addClass('disable_click');
      $('#send').attr('disabled', true);
  }
@@ -98,7 +106,7 @@
          navigator.app.exitApp();
      }
  }, false);
-
+ $('#hint').hide();
  $('#number').on('input',function () {
 
      if (/^([+])?\d{11,13}$/.test($("#number").val())) {
@@ -108,6 +116,7 @@
 
          $('#send').removeClass('disable_click');
          $('#send').attr('disabled', false);
+         $('#hint').hide();
      } else {
 
          $('#number').removeClass('green_text');
@@ -115,6 +124,8 @@
 
          $('#send').addClass('disable_click');
          $('#send').attr('disabled', true);
+
+         $('#hint').show();
      }
 
  });

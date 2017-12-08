@@ -23,6 +23,14 @@ module.exports = [
         "clobbers": [
             "window.AdMob"
         ]
+    },
+    {
+        "id": "cordova-plugin-clipboard2.Clipboard",
+        "file": "plugins/cordova-plugin-clipboard2/www/clipboard.js",
+        "pluginId": "cordova-plugin-clipboard2",
+        "clobbers": [
+            "cordova.plugins.clipboard"
+        ]
     }
 ];
 module.exports.metadata = 
@@ -32,7 +40,8 @@ module.exports.metadata =
     "cordova-plugin-splashscreen": "4.0.3",
     "cordova-plugin-statusbar": "2.2.3",
     "cordova-plugin-extension": "1.5.2",
-    "cordova-plugin-admobpro": "2.29.24"
+    "cordova-plugin-admobpro": "2.29.24",
+    "cordova-plugin-clipboard2": "0.1.0"
 };
 // BOTTOM OF METADATA
 });
