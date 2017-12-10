@@ -1,5 +1,5 @@
 <component name="libraryTable">
-  <library name="cordova-generic-ad">
+  <library name="__local_jars__:D.\App Development\Whatsapp\whatsapp\platforms\android\libs\cordova-generic-ad.jar:unspecified@jar">
     <CLASSES>
       <root url="jar://$PROJECT_DIR$/libs/cordova-generic-ad.jar!/" />
     </CLASSES>

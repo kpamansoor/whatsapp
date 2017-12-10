@@ -37,7 +37,7 @@
      if (AdMob) AdMob.prepareInterstitial({
          adId: admobid.interstitial,
          autoShow: false,
-         isTesting: true
+         isTesting: false
      });
      if(AdMob) AdMob.createBanner({
         adId: admobid.banner,
