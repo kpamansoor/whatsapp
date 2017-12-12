@@ -54,5 +54,21 @@
         },
         "is_top_level": true,
         "variables": {}
+    },
+    "callsplugin": {
+        "source": {
+            "type": "registry",
+            "id": "callsplugin"
+        },
+        "is_top_level": true,
+        "variables": {}
+    },
+    "cordova-plugin-android-permissions": {
+        "source": {
+            "type": "registry",
+            "id": "cordova-plugin-android-permissions"
+        },
+        "is_top_level": true,
+        "variables": {}
     }
 }

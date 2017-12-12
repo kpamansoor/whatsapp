@@ -31,6 +31,22 @@ module.exports = [
         "clobbers": [
             "cordova.plugins.clipboard"
         ]
+    },
+    {
+        "id": "callsplugin.CallsPlugin",
+        "file": "plugins/callsplugin/./www/CallsPlugin.js",
+        "pluginId": "callsplugin",
+        "clobbers": [
+            "calls"
+        ]
+    },
+    {
+        "id": "cordova-plugin-android-permissions.Permissions",
+        "file": "plugins/cordova-plugin-android-permissions/www/permissions.js",
+        "pluginId": "cordova-plugin-android-permissions",
+        "clobbers": [
+            "cordova.plugins.permissions"
+        ]
     }
 ];
 module.exports.metadata = 
@@ -41,7 +57,9 @@ module.exports.metadata =
     "cordova-plugin-statusbar": "2.2.3",
     "cordova-plugin-extension": "1.5.2",
     "cordova-plugin-admobpro": "2.29.24",
-    "cordova-plugin-clipboard2": "0.1.0"
+    "cordova-plugin-clipboard2": "0.1.0",
+    "callsplugin": "0.2",
+    "cordova-plugin-android-permissions": "1.0.0"
 };
 // BOTTOM OF METADATA
 });

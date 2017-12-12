@@ -139,3 +139,11 @@ h1 {
         color: rgb(13, 26, 24);
     }
 }
+/* Important part */
+.modal-dialog{
+    overflow-y: initial !important
+}
+.modal-body{
+    height: 250px;
+    overflow-y: auto;
+}
