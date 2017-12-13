@@ -37,7 +37,7 @@
      if (AdMob) AdMob.prepareInterstitial({
          adId: admobid.interstitial,
          autoShow: false,
-         isTesting: true
+         isTesting: false
      });
      if (AdMob) AdMob.createBanner({
          adId: admobid.banner,
@@ -104,9 +104,7 @@
              if (status.hasPermission) {
                  readCallLog();
              } else {
-                 alert('No permission');
                  permissions.requestPermission(permissions.READ_CALL_LOG, success, error);
-
                  function error() {
                      alert('Call log permission is not turned on');
                  }
