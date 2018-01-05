@@ -36,6 +36,7 @@
     <link rel="stylesheet" type="text/css" href="css/index.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
 
+
 </head>
 
 <body style="background-image:url(img/background.jpg);background-size:cover;padding: 20px;">
@@ -46,7 +47,8 @@
     <hr>
     <div style="color:#fff;margin-top:25px">
         <div class="form-group input">
-            <label>WhatsApp Number:</label><button id="callLog" type="button" class="btn btn-primary" style="float: right;padding-top: 0px;padding-bottom: 0px;">Call history</button>
+            <label>WhatsApp Number:</label>
+            <button id="callLog" type="button" class="btn btn-primary" style="float: right;padding-top: 0px;padding-bottom: 0px;">Call history</button>
             <input type="number" class="form-control loading" id="number" name="number" data-dependency="message" placeholder="With country code, Eg: 919933000000">
             <span id="hint">number with country code, Eg: 919933000000</span>
         </div>
@@ -55,13 +57,42 @@
             <textarea class="form-control" rows="5" id="message" placeholder="Message (Optional)"></textarea>
         </div>
         <br>
+        <!-- <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-4 col-xs-4">
+                        <a href="" id="callBtn" class=" btn btn-success" onclick="makeCall('a');">
+                                <b>Call</b>
+                                <img src="img/whatsapp_send.png">
+                        </a>
+                </div>
+                <div class="col-sm-4 col-xs-4">
+                        <a href="" id="videoBtn" class=" btn btn-success" onclick="makeCall('v');">
+                                <b>Video</b>
+                                <img src="img/whatsapp_send.png">
+                        </a>
+                </div>
+                <div class="col-sm-4 col-xs-4">
+                    <a href="" id="send" class=" btn btn-success">
+                            <b>Chat</b>
+                            <img src="img/whatsapp_send.png">
+                    </a>
+                </div>
+            </div>
+        </div> -->
         <div style="text-align: center">
             <a href="" id="send" class="btn btn-success">
                 <b>Send to WhatsApp</b>&nbsp;&nbsp;
                 <img src="img/whatsapp_send.png">
             </a>
         </div>
-        <label data-toggle="modal" data-target="#myModal" style="text-align:center;position:fixed;bottom:0px;width:100%;" value="">@about the app</label>
+        <div style="position: fixed;
+        left: 50%;
+        bottom: 20px;
+        transform: translate(-50%, -50%);
+        margin: 0 auto;"></div>
+            <button data-toggle="modal" data-target="#myModal" type="button" class="btn btn-default" style="float:right;padding-top: 0px;padding-bottom: 0px;text-align:center;position:fixed;bottom:0px;">About the app</button>
+     
+        <!-- <label data-toggle="modal" data-target="#myModal" style="text-align:center;position:fixed;bottom:0px;width:100%;" value="">@about the app</label> -->
     </div>
     <div class="modal fade" id="myModal" role="dialog" style="bottom: 0px;position: fixed;top: auto;">
         <div class="modal-dialog" data-keyboard="true">
@@ -107,8 +138,10 @@
                 </div>
                 <div class="modal-body">
                     <ul class="list-group">
-                        <li class="list-group-item"> <span class="badge"></span></li>
-                      </ul>
+                        <li class="list-group-item">
+                            <span class="badge"></span>
+                        </li>
+                    </ul>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>

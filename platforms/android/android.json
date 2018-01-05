@@ -35,6 +35,14 @@
                         {
                             "xml": "<feature name=\"Permissions\"><param name=\"android-package\" value=\"com.android.plugins.Permissions\" /></feature>",
                             "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"OpenActivity\"><param name=\"android-package\" value=\"com.modinify.openactivity.OpenActivity\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"IntentShim\"><param name=\"android-package\" value=\"com.darryncampbell.cordova.plugin.intent.IntentShim\" /></feature>",
+                            "count": 1
                         }
                     ]
                 }
@@ -54,6 +62,22 @@
                     "/manifest/application": [
                         {
                             "xml": "<activity android:configChanges=\"keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize\" android:name=\"com.google.android.gms.ads.AdActivity\" android:theme=\"@android:style/Theme.Translucent\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<provider android:authorities=\"${applicationId}.provider\" android:exported=\"false\" android:grantUriPermissions=\"true\" android:name=\"android.support.v4.content.FileProvider\"><meta-data android:name=\"android.support.FILE_PROVIDER_PATHS\" android:resource=\"@xml/provider_paths\" /></provider>",
+                            "count": 1
+                        }
+                    ],
+                    "/manifest/application/activity": [
+                        {
+                            "xml": "<intent-filter><action android:name=\"com.darryncampbell.cordova.plugin.intent.ACTION\" /><category android:name=\"android.intent.category.DEFAULT\" /></intent-filter>",
+                            "count": 1
+                        }
+                    ],
+                    "/manifest": [
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.READ_EXTERNAL_STORAGE\" />",
                             "count": 1
                         }
                     ]
@@ -84,6 +108,12 @@
             "PACKAGE_NAME": "com.mansoor.whatsapp"
         },
         "cordova-plugin-android-permissions": {
+            "PACKAGE_NAME": "com.mansoor.whatsapp"
+        },
+        "com.modinify.openactivity": {
+            "PACKAGE_NAME": "com.mansoor.whatsapp"
+        },
+        "com-darryncampbell-cordova-plugin-intent": {
             "PACKAGE_NAME": "com.mansoor.whatsapp"
         }
     },
@@ -136,6 +166,22 @@
             "clobbers": [
                 "cordova.plugins.permissions"
             ]
+        },
+        {
+            "id": "com.modinify.openactivity.OpenActivity",
+            "file": "plugins/com.modinify.openactivity/www/openactivity.js",
+            "pluginId": "com.modinify.openactivity",
+            "clobbers": [
+                "OpenActivity"
+            ]
+        },
+        {
+            "id": "com-darryncampbell-cordova-plugin-intent.IntentShim",
+            "file": "plugins/com-darryncampbell-cordova-plugin-intent/www/IntentShim.js",
+            "pluginId": "com-darryncampbell-cordova-plugin-intent",
+            "clobbers": [
+                "intentShim"
+            ]
         }
     ],
     "plugin_metadata": {
@@ -146,6 +192,8 @@
         "cordova-plugin-admobpro": "2.29.24",
         "cordova-plugin-clipboard2": "0.1.0",
         "callsplugin": "0.2",
-        "cordova-plugin-android-permissions": "1.0.0"
+        "cordova-plugin-android-permissions": "1.0.0",
+        "com.modinify.openactivity": "0.0.1",
+        "com-darryncampbell-cordova-plugin-intent": "0.0.16"
     }
 }
