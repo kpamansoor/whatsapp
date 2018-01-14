@@ -86,19 +86,6 @@
  function onDeviceReady() {
      initAds();
      setTimeout(function () {
-<<<<<<< HEAD
-        navigator.splashscreen.hide();
-        cordova.plugins.clipboard.paste(function (text) {
-            if(/^([+])?\d{11,13}$/.test(text)){
-                text = text.replace("+","");
-                text = text.replace("-","");
-                if(confirm("A mobile number "+text+" found in clipboard. Do you want to copy? ")){
-                    $('#number').val(text);
-                    $("#number").trigger("input");
-                    updateLink();
-                }
-            }
-=======
          navigator.splashscreen.hide();
          cordova.plugins.clipboard.paste(function (text) {
              if (/^([+])?\d{11,13}$/.test(text)) {
@@ -108,7 +95,6 @@
                      updateLink();
                  }
              }
->>>>>>> 22edca19eb9156b4659f79274f9d34b550ba81af
          });
      }, 1000);
      setTimeout(function () {
