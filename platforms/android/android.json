@@ -1,34 +1,4 @@
 {
-<<<<<<< HEAD
-  "prepare_queue": {
-    "installed": [],
-    "uninstalled": []
-  },
-  "config_munge": {
-    "files": {
-      "res/xml/config.xml": {
-        "parents": {
-          "/*": [
-            {
-              "xml": "<feature name=\"Whitelist\"><param name=\"android-package\" value=\"org.apache.cordova.whitelist.WhitelistPlugin\" /><param name=\"onload\" value=\"true\" /></feature>",
-              "count": 1
-            },
-            {
-              "xml": "<feature name=\"SplashScreen\"><param name=\"android-package\" value=\"org.apache.cordova.splashscreen.SplashScreen\" /><param name=\"onload\" value=\"true\" /></feature>",
-              "count": 1
-            },
-            {
-              "xml": "<feature name=\"StatusBar\"><param name=\"android-package\" value=\"org.apache.cordova.statusbar.StatusBar\" /><param name=\"onload\" value=\"true\" /></feature>",
-              "count": 1
-            },
-            {
-              "xml": "<feature name=\"AdMob\"><param name=\"android-package\" value=\"com.rjfun.cordova.admob.AdMobPlugin\" /><param name=\"onload\" value=\"true\" /></feature>",
-              "count": 1
-            },
-            {
-              "xml": "<feature name=\"Clipboard\"><param name=\"android-package\" value=\"com.verso.cordova.clipboard.Clipboard\" /></feature>",
-              "count": 1
-=======
     "prepare_queue": {
         "installed": [],
         "uninstalled": []
@@ -112,31 +82,9 @@
                         }
                     ]
                 }
->>>>>>> 22edca19eb9156b4659f79274f9d34b550ba81af
             }
           ]
         }
-<<<<<<< HEAD
-      },
-      "AndroidManifest.xml": {
-        "parents": {
-          "/*": [
-            {
-              "xml": "<uses-permission android:name=\"android.permission.INTERNET\" />",
-              "count": 1
-            },
-            {
-              "xml": "<uses-permission android:name=\"android.permission.ACCESS_NETWORK_STATE\" />",
-              "count": 1
-            }
-          ],
-          "/manifest/application": [
-            {
-              "xml": "<activity android:configChanges=\"keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize\" android:name=\"com.google.android.gms.ads.AdActivity\" android:theme=\"@android:style/Theme.Translucent\" />",
-              "count": 1
-            }
-          ]
-=======
     },
     "installed_plugins": {
         "cordova-plugin-whitelist": {
@@ -168,7 +116,6 @@
         },
         "com-darryncampbell-cordova-plugin-intent": {
             "PACKAGE_NAME": "com.mansoor.whatsapp"
->>>>>>> 22edca19eb9156b4659f79274f9d34b550ba81af
         }
       }
     }
@@ -177,57 +124,6 @@
     "cordova-plugin-whitelist": {
       "PACKAGE_NAME": "com.mansoor.whatsapp"
     },
-<<<<<<< HEAD
-    "cordova-plugin-splashscreen": {
-      "PACKAGE_NAME": "com.mansoor.whatsapp"
-    },
-    "cordova-plugin-statusbar": {
-      "PACKAGE_NAME": "com.mansoor.whatsapp"
-    },
-    "cordova-plugin-extension": {
-      "PACKAGE_NAME": "com.mansoor.whatsapp"
-    },
-    "cordova-plugin-admobpro": {
-      "PACKAGE_NAME": "com.mansoor.whatsapp"
-    },
-    "cordova-plugin-clipboard2": {
-      "PACKAGE_NAME": "com.mansoor.whatsapp"
-    }
-  },
-  "dependent_plugins": {},
-  "modules": [
-    {
-      "id": "cordova-plugin-splashscreen.SplashScreen",
-      "file": "plugins/cordova-plugin-splashscreen/www/splashscreen.js",
-      "pluginId": "cordova-plugin-splashscreen",
-      "clobbers": [
-        "navigator.splashscreen"
-      ]
-    },
-    {
-      "id": "cordova-plugin-statusbar.statusbar",
-      "file": "plugins/cordova-plugin-statusbar/www/statusbar.js",
-      "pluginId": "cordova-plugin-statusbar",
-      "clobbers": [
-        "window.StatusBar"
-      ]
-    },
-    {
-      "id": "cordova-plugin-admobpro.AdMob",
-      "file": "plugins/cordova-plugin-admobpro/www/AdMob.js",
-      "pluginId": "cordova-plugin-admobpro",
-      "clobbers": [
-        "window.AdMob"
-      ]
-    },
-    {
-      "id": "cordova-plugin-clipboard2.Clipboard",
-      "file": "plugins/cordova-plugin-clipboard2/www/clipboard.js",
-      "pluginId": "cordova-plugin-clipboard2",
-      "clobbers": [
-        "cordova.plugins.clipboard"
-      ]
-=======
     "dependent_plugins": {},
     "modules": [
         {
@@ -306,7 +202,6 @@
         "cordova-plugin-android-permissions": "1.0.0",
         "com.modinify.openactivity": "0.0.1",
         "com-darryncampbell-cordova-plugin-intent": "0.0.16"
->>>>>>> 22edca19eb9156b4659f79274f9d34b550ba81af
     }
   ],
   "plugin_metadata": {
