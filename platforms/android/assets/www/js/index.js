@@ -80,6 +80,8 @@
         navigator.splashscreen.hide();
         cordova.plugins.clipboard.paste(function (text) {
             if(/^([+])?\d{11,13}$/.test(text)){
+                text = text.replace("+","");
+                text = text.replace("-","");
                 if(confirm("A mobile number "+text+" found in clipboard. Do you want to copy? ")){
                     $('#number').val(text);
                     $("#number").trigger("input");
@@ -103,7 +105,7 @@
      if ($('#myModal').is(':visible')) {
          $('#myModal').modal('toggle');
      } else {
-         navigator.app.exitApp();
+         navigator.app.exitApp();   
      }
  }, false);
  $('#hint').hide();
