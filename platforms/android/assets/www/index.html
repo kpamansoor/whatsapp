@@ -29,24 +29,26 @@
             * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
                 * Enable inline JS: add 'unsafe-inline' to default-src
         -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
+    <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;"> -->
     <meta name="format-detection" content="telephone=no">
     <meta name="msapplication-tap-highlight" content="no">
     <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
     <link rel="stylesheet" type="text/css" href="css/index.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
 
+
 </head>
 
 <body style="background-image:url(img/background.jpg);background-size:cover;padding: 20px;">
     <center>
-        <img src="img/title1.png" style="height: 3em;margin-bottom: -10px;">
+        <img src="img/title.png" style="height: 3em;margin-bottom: -10px;">
     </center>
 
     <hr>
     <div style="color:#fff;margin-top:25px">
         <div class="form-group input">
             <label>WhatsApp Number:</label>
+            <button id="callLog" type="button" class="btn btn-primary" style="float: right;padding-top: 0px;padding-bottom: 0px;">Call history</button>
             <input type="number" class="form-control loading" id="number" name="number" data-dependency="message" placeholder="With country code, Eg: 919933000000">
             <span id="hint">number with country code, Eg: 919933000000</span>
         </div>
@@ -55,13 +57,42 @@
             <textarea class="form-control" rows="5" id="message" placeholder="Message (Optional)"></textarea>
         </div>
         <br>
+        <!-- <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-4 col-xs-4">
+                        <a href="" id="callBtn" class=" btn btn-success" onclick="makeCall('a');">
+                                <b>Call</b>
+                                <img src="img/whatsapp_send.png">
+                        </a>
+                </div>
+                <div class="col-sm-4 col-xs-4">
+                        <a href="" id="videoBtn" class=" btn btn-success" onclick="makeCall('v');">
+                                <b>Video</b>
+                                <img src="img/whatsapp_send.png">
+                        </a>
+                </div>
+                <div class="col-sm-4 col-xs-4">
+                    <a href="" id="send" class=" btn btn-success">
+                            <b>Chat</b>
+                            <img src="img/whatsapp_send.png">
+                    </a>
+                </div>
+            </div>
+        </div> -->
         <div style="text-align: center">
             <a href="" id="send" class="btn btn-success">
                 <b>Send to WhatsApp</b>&nbsp;&nbsp;
                 <img src="img/whatsapp_send.png">
             </a>
         </div>
-        <label data-toggle="modal" data-target="#myModal" style="text-align:center;position:fixed;bottom:0px;width:100%;" value="">@about the app</label>
+        <div style="position: fixed;
+        left: 50%;
+        bottom: 20px;
+        transform: translate(-50%, -50%);
+        margin: 0 auto;"></div>
+            <button data-toggle="modal" data-target="#myModal" type="button" class="btn btn-default" style="float:right;padding-top: 0px;padding-bottom: 0px;text-align:center;position:fixed;bottom:0px;">About the app</button>
+     
+        <!-- <label data-toggle="modal" data-target="#myModal" style="text-align:center;position:fixed;bottom:0px;width:100%;" value="">@about the app</label> -->
     </div>
     <div class="modal fade" id="myModal" role="dialog" style="bottom: 0px;position: fixed;top: auto;">
         <div class="modal-dialog" data-keyboard="true">
@@ -70,13 +101,17 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h4 class="modal-title">
-                        <img src="img/logo.png" width="25px">&nbsp;&nbsp;About this...</h4>
+                        <img src="img/logo.png" width="25px">&nbsp;&nbsp;About the app.</h4>
                 </div>
                 <div class="modal-body">
                     <p>
                         <b>
                             <ul>
+<<<<<<< HEAD
                                 <li>Type or paste mobile number. </li>
+=======
+                                <li>Mobile number can be type / paste / get from call history. </li>
+>>>>>>> 22edca19eb9156b4659f79274f9d34b550ba81af
                                 <li>Valid mobile will auto detect from clip board. </li>
                                 <li>Number should prefix country code.</li>
                                 <li>Message box is optional.</li>
@@ -88,6 +123,29 @@
                             </ul>
                         </b>
                     </p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="modal fade" id="callLogsModal" role="dialog" style="bottom: 0px;position: fixed;top: auto;">
+        <div class="modal-dialog" data-keyboard="true">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">
+                        <img src="img/logo.png" width="25px">&nbsp;&nbsp;Select from call history</h4>
+                </div>
+                <div class="modal-body">
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <span class="badge"></span>
+                        </li>
+                    </ul>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>

@@ -21,6 +21,18 @@
         },
         "cordova-plugin-clipboard2": {
             "PACKAGE_NAME": "com.mansoor.whatsapp"
+        },
+        "callsplugin": {
+            "PACKAGE_NAME": "com.mansoor.whatsapp"
+        },
+        "cordova-plugin-android-permissions": {
+            "PACKAGE_NAME": "com.mansoor.whatsapp"
+        },
+        "com.modinify.openactivity": {
+            "PACKAGE_NAME": "com.mansoor.whatsapp"
+        },
+        "com-darryncampbell-cordova-plugin-intent": {
+            "PACKAGE_NAME": "com.mansoor.whatsapp"
         }
     },
     "dependent_plugins": {
