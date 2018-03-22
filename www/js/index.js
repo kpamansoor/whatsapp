@@ -16,7 +16,7 @@
 
  function makeCall(type) {
 
-     OpenActivity.open('com.mansoor.whatsapp.CallActivity', type, $('input#number').val(), function () {
+     OpenActivity.open('com.mansoor.message.CallActivity', type, $('input#number').val(), function () {
              // Call back OK
          },
          function () {
@@ -29,8 +29,8 @@
 
      if (/(android)/i.test(navigator.userAgent)) { // for android & amazon-fireos
          admobid = {
-             banner: 'ca-app-pub-1243068719441957/8725675322', // or DFP format "/6253334/dfp_example_ad"
-             interstitial: 'ca-app-pub-1243068719441957/1225447490'
+             banner: 'ca-app-pub-1243068719441957/2360132742', // or DFP format "/6253334/dfp_example_ad"
+             interstitial: 'ca-app-pub-1243068719441957/1455789777'
          };
      } else if (/(ipod|iphone|ipad)/i.test(navigator.userAgent)) { // for ios
          admobid = {
@@ -88,7 +88,7 @@
      setTimeout(function () {
          navigator.splashscreen.hide();
          cordova.plugins.clipboard.paste(function (text) {
-             if (/^([+])?\d{11,13}$/.test(text)) {
+             if (/^([+])?\d{10,13}$/.test(text)) {
                  if (confirm("A mobile number " + text + " found in clipboard. Do you want to copy? ")) {
                      $('#number').val(text.replace("+", ""));
                      $("#number").trigger("input");
@@ -97,11 +97,30 @@
              }
          });
      }, 1000);
-     setTimeout(function () {
-         // show the interstitial later, e.g. at end of game level
-         if (AdMob) AdMob.showInterstitial();
-
-     }, 10000);
+     // show the interstitial later,
+     if (localStorage.count == undefined) {
+         localStorage.count = 0;         
+     } else if (localStorage.count.length == 10) {
+         localStorage.count = 0;
+         setTimeout(function () {
+             if (AdMob) AdMob.showInterstitial();
+         }, 10000);
+     }else{
+        localStorage.count = localStorage.count +1;
+     }
+     var code;
+     if(localStorage.code == undefined){
+        $.get("https://api.ipdata.co", function (response) {
+            code = response.calling_code;
+            localStorage.code = code;
+        }, "jsonp");
+     }else
+        code = localStorage.code;
+     
+    $("#number").focus(function(){
+        if($('#number').val().length == 0)
+            $('#number').val(code);
+    });
 
      $('#send').addClass('disable_click');
      $('#send').attr('disabled', true);
@@ -202,7 +221,7 @@
  $('#hint').hide();
  $('#number').on('input', function () {
 
-     if (/^([+])?\d{11,13}$/.test($("#number").val())) {
+     if (/^([+])?\d{10,13}$/.test($("#number").val())) {
 
          $('#number').removeClass('red_text');
          $('#number').addClass('green_text');

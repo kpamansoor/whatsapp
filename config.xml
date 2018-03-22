@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
-    <widget id="com.mansoor.whatsapp" version="1.5.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-        <name>WhatsApp To unsaved contact</name>
-        <description>
+<widget id="com.mansoor.message" version="1.10.0" xmlns="http://www.w3.org/ns/widgets" xmlns:android="http://schemas.android.com/apk/res/android" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>Message To unsaved number</name>
+    <description>
             A sample Apache Cordova application that responds to the deviceready event.
         </description>
     <author email="dev@cordova.apache.org" href="http://cordova.io">
